@@ -42,8 +42,6 @@ fn write_to_file(data: &[csv::StringRecord], filename: String) -> Result<(), Box
 fn split(rows: u32, verbose: bool, source: String, destination: String) -> Result<(), Box<dyn Error>> {
     // Build the CSV reader and iterate over each record.
 
-    println!("Running Process Function");
-
     let path = Path::new(&source);
     
     let mut i:u32 = 0;
@@ -77,7 +75,6 @@ fn split(rows: u32, verbose: bool, source: String, destination: String) -> Resul
 
 fn main() {
     let args = Args::parse();
-    println!("{:?}",args);
     let _res = split(args.rows, args.verbose, args.source, args.destination);
     // if let Err(err) = example(args.rows, args.verbose, args.source, args.destination) {
     //     println!("error running example: {}", err);
